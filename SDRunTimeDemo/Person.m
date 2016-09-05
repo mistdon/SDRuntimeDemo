@@ -7,22 +7,52 @@
 //
 
 #import "Person.h"
-
+#import <objc/runtime.h>
+@interface Person ()
+@property (nonatomic, copy) NSString *personalName;
+@end
 @implementation Person
 - (instancetype)init{
     if (self = [super init]) {
-        _name = @"shendong";
-        _age  = 18;
+        [self configureDefaultValue];
     }
     return self;
 }
-- (void)callPersonalInfo{
-    NSLog(@"%@.name=%@, and age is %lu",self.class, self.name, self.age);
+- (void)configureDefaultValue{
+    self.name         = @"shendong";
+    self.age          = @18;
+    self.personalName = @"dadongge";
 }
-- (void)configureNewName:(NSString *)newName age:(NSUInteger)newAge{
+- (void)callPersonalInfo{
+    NSLog(@"%@.name=%@, and age is %lu",self.class, self.name, [self.age integerValue]);
+}
+- (void)configureNewName:(NSString *)newName age:(NSNumber *)newAge{
     self.name = newName;
-    self.age = newAge;
-    NSLog(@"%@.name=%@, and age is %lu",self.class, self.name, self.age);
+    self.age  = newAge;
+    NSLog(@"%@.name=%@, and age is %lu",self.class, self.name, [self.age integerValue]);
+}
+//解档
+- (void)encodeWithCoder:(NSCoder *)aCoder{
+    unsigned int outcount = 0;
+    Ivar *ivars = class_copyIvarList([self class], &outcount);
+    for (int index = 0; index < outcount; index++) {
+        Ivar ivar = ivars[index];
+        NSString *key = [NSString stringWithCString:ivar_getName(ivar) encoding:NSUTF8StringEncoding];
+        [aCoder encodeObject:[self valueForKey:key] forKey:key];
+    }
+}
+//归档
+- (instancetype)initWithCoder:(NSCoder *)aDecoder{
+    if (self = [super init]) {
+        unsigned int outcount = 0;
+        Ivar *ivars = class_copyIvarList([self class], &outcount);
+        for(int index = 0; index < outcount; index++){
+            Ivar ivar = ivars[index];
+            NSString *key = [NSString stringWithCString:ivar_getName(ivar) encoding:NSUTF8StringEncoding];
+            [self setValue:[aDecoder decodeObjectForKey:key] forKey:key];
+        }
+    }
+    return self;
 }
 
 @end

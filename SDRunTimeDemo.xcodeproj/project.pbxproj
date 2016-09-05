@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B3C11B11D7D174C000A5A0C /* NSObject+JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C11B01D7D174C000A5A0C /* NSObject+JSONModel.m */; };
 		3BD1E67F1D7912E5003E1F10 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD1E67E1D7912E5003E1F10 /* main.m */; };
 		3BD1E6821D7912E5003E1F10 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD1E6811D7912E5003E1F10 /* AppDelegate.m */; };
 		3BD1E6851D7912E5003E1F10 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD1E6841D7912E5003E1F10 /* ViewController.m */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B3C11AF1D7D174C000A5A0C /* NSObject+JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JSONModel.h"; sourceTree = "<group>"; };
+		3B3C11B01D7D174C000A5A0C /* NSObject+JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JSONModel.m"; sourceTree = "<group>"; };
 		3BD1E67A1D7912E5003E1F10 /* SDRunTimeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDRunTimeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BD1E67E1D7912E5003E1F10 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3BD1E6801D7912E5003E1F10 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -77,6 +80,8 @@
 				3BD1E6981D7918A6003E1F10 /* Person+newMethod.m */,
 				3BD1E69A1D792163003E1F10 /* Person+newProperty.h */,
 				3BD1E69B1D792163003E1F10 /* Person+newProperty.m */,
+				3B3C11AF1D7D174C000A5A0C /* NSObject+JSONModel.h */,
+				3B3C11B01D7D174C000A5A0C /* NSObject+JSONModel.m */,
 				3BD1E6861D7912E5003E1F10 /* Main.storyboard */,
 				3BD1E6891D7912E5003E1F10 /* Assets.xcassets */,
 				3BD1E68B1D7912E5003E1F10 /* LaunchScreen.storyboard */,
@@ -165,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BD1E69C1D792163003E1F10 /* Person+newProperty.m in Sources */,
+				3B3C11B11D7D174C000A5A0C /* NSObject+JSONModel.m in Sources */,
 				3BD1E6851D7912E5003E1F10 /* ViewController.m in Sources */,
 				3BD1E6991D7918A6003E1F10 /* Person+newMethod.m in Sources */,
 				3BD1E6821D7912E5003E1F10 /* AppDelegate.m in Sources */,
@@ -318,6 +324,7 @@
 				3BD1E6931D7912E5003E1F10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

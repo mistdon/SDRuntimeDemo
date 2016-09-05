@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Person : NSObject
+@interface Person : NSObject<NSCoding>
 
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, assign) NSUInteger age;
+@property (nonatomic, strong) NSNumber *age;
 
 - (void)callPersonalInfo;
 - (void)setPersonalName;
-- (void)configureNewName:(NSString *)newname age:(NSUInteger)age;
+- (void)configureNewName:(NSString *)newname age:(NSNumber *)age;
 @end
