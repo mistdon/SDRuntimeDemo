@@ -40,6 +40,7 @@
         NSString *key = [NSString stringWithCString:ivar_getName(ivar) encoding:NSUTF8StringEncoding];
         [aCoder encodeObject:[self valueForKey:key] forKey:key];
     }
+    free(ivars);
 }
 //归档
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{
@@ -51,6 +52,7 @@
             NSString *key = [NSString stringWithCString:ivar_getName(ivar) encoding:NSUTF8StringEncoding];
             [self setValue:[aDecoder decodeObjectForKey:key] forKey:key];
         }
+        free(ivars);
     }
     return self;
 }
